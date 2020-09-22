@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="allposts.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <title>Read our latest posts</title>
+  </head>
+  <body id="add-post-bg">
+    <div id="links-bar">
+      <a href="sign.html">Sign In / Register</a>
+      <a href="allposts.html">Show all posts</a>
+      <a href="myposts.html">My posts</a>
+      <a href="addpost.html" class="active">Add a new post</a>
+    </div>
+
+    <div id="hidden-btns" class="">
+      <button id="log-out">Log Out</button>
+    </div>
+
+    <div id="hide-message" class="">
+      <div id="warn-box">
+        <div id="warn-place">
+          <i class="fas fa-heart-broken"></i>
+          <p>
+            We are sorry to warn you, but to add a new post you have to be
+            signed up or registered.
+          </p>
+          <br />
+          <a href="sign.html" id="sign-btn">Sign In</a> |
+          <a href="register.html" id="register-btn">Register</a>
+        </div>
+      </div>
+    </div>
+    <div id="form-size" class="">
+      <form id="form-add-post">
+        <div id="form-params">
+          <h1 id="title-place">Title</h1>
+          <input
+            type="text"
+            id="title-input-place"
+            required
+            minlength="10"
+            maxlength="50"
+          />
+          <h1 id="text-info-place">Your Text</h1>
+          <textarea
+            type="text"
+            id="info-input-place"
+            required
+            minlength="50"
+            maxlength="700"
+          ></textarea>
+        </div>
+        <div id="submit-post-btn">
+          <input type="submit" value="Add new post" id="submit-post" />
+        </div>
+      </form>
+    </div>
+    <script src="addpost.js"></script>
+  </body>
+</html>

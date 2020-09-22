@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: url("blog-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "BioRhyme", serif;
+}
+
+body #links-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 45px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 12px 0;
+}
+
+body #links-bar a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 3px 10px;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+  border: none;
+}
+
+body #links-bar a:hover {
+  border-bottom: 1px solid #2e3131;
+  background-color: #2e3131;
+  border-radius: 50px;
+}
+
+body #links-bar .active {
+  border-bottom: 1px solid #2e3131;
+  background-color: #2e3131;
+  border-radius: 50px;
+}
+
+body #form-place {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #form-place #form {
+  margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  width: 350px;
+  padding-top: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 60px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px;
+}
+
+body #form-place #form h1 {
+  padding-left: 65px;
+  padding-bottom: 15px;
+  color: #ffffff;
+}
+
+body #form-place #form #reg-font {
+  padding-left: 25px;
+}
+
+body #form-place #form #sign-in {
+  padding: 7px 7px;
+  line-height: 35px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  display: -ms-grid;
+  display: grid;
+  width: 250px;
+}
+
+body #form-place #form #sign-in input {
+  height: 35px;
+}
+
+body #form-place #form #sign-in #stay-logged {
+  vertical-align: middle;
+}
+
+body #form-place #form #sign-in #remember {
+  padding-left: 5px;
+  color: #2e3131;
+}
+
+body #form-place #form #login,
+body #form-place #form #register-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 5px 0;
+  font-size: 20px;
+  background-color: #333333;
+  border: 3px solid #ffffff;
+  border-radius: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #ffffff;
+}
+
+body #form-place #form #login:hover,
+body #form-place #form #register-btn:hover {
+  border: 3px solid #333333;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+body #form-place #form #register {
+  margin-top: 15px;
+  text-align: center;
+  color: #ffffff;
+}
+
+body #form-place #form #register a {
+  padding: 0 5px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #333333;
+  border: #333333 1px solid;
+  color: #ffffff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body #form-place #form #register a:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+body #already-logged {
+  width: 100vw;
+  height: 580px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+}
+
+body #already-logged #already-text {
+  text-align: center;
+}
+
+body #already-logged #already-text #show-success {
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 15px 5px;
+}
+
+body #already-logged #already-text #show-success i {
+  font-size: 50px;
+  color: #00cc66;
+}
+
+body #already-logged #already-text #show-success h1 {
+  color: #000000;
+}
+
+body #already-logged #already-text #show-success p {
+  color: #000000;
+}
+
+body #already-logged #already-text #show-success p a {
+  border: none;
+  color: #00cc66;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+body #already-logged #already-text #show-success p a:hover {
+  border: 1px solid #000000;
+  background-color: #333333;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+body #log-out {
+  width: 100px;
+  text-align: center;
+  position: fixed;
+  right: 15px;
+  top: 12px;
+  padding: 8px;
+  background-color: #2e3131;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+body #log-out:hover {
+  top: 9px;
+  background-color: #ff0000;
+  padding: 11px;
+}
+
+body #add-post {
+  background-color: #2e3131;
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #ffffff;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+body #add-post:hover {
+  padding: 8px;
+  bottom: 12px;
+  background-color: #00cc66;
+  left: 12px;
+  padding-right: 12px;
+}
+
+body .hide {
+  display: none;
+}
+/*# sourceMappingURL=forms-style.css.map */

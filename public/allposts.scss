@@ -1,0 +1,330 @@
+$backcolor: rgba(243, 241, 239, 1);
+$font-color: rgba(46, 49, 49, 1);
+$transparent: rgba(0, 0, 0, 0.3);
+$heavy-color: #000000;
+$log-color: #333333;
+$white: #ffffff;
+$success: #00cc66;
+$log-out: #ff0000;
+$sign-color: rgb(3, 123, 252);
+$light-sign-color: rgb(3, 157, 252);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("allposts.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "BioRhyme", serif;
+  #links-bar {
+    margin-bottom: 25px;
+    display: flex;
+    grid-gap: 45px;
+    justify-content: center;
+    background-color: $transparent;
+    padding: 12px 0;
+    a {
+      text-decoration: none;
+      color: $white;
+      padding: 3px 10px;
+      transition: 0.5s ease-in;
+      border: none;
+    }
+    a:hover {
+      border-bottom: 1px solid $font-color;
+      background-color: $font-color;
+      border-radius: 50px;
+    }
+    .active {
+      border-bottom: 1px solid $font-color;
+      background-color: $font-color;
+      border-radius: 50px;
+    }
+    .active:hover {
+      background-color: $white;
+      color: $heavy-color;
+    }
+  }
+
+  #log-out {
+    width: 100px;
+    text-align: center;
+    position: fixed;
+    right: 15px;
+    top: 12px;
+    padding: 8px;
+    background-color: $font-color;
+    border-radius: 5px;
+    color: $white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+  }
+
+  #log-out:hover {
+    top: 9px;
+    background-color: $log-out;
+    padding: 11px;
+  }
+  #add-post {
+    background-color: $font-color;
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: $white;
+    transition: 0.3s ease-in;
+  }
+  #add-post:hover {
+    padding: 8px;
+    bottom: 12px;
+    background-color: $success;
+    left: 12px;
+    padding-right: 12px;
+  }
+  #posts {
+    width: 65%;
+    margin: auto;
+    background: $transparent;
+    border-radius: 5px;
+    padding-bottom: 1px;
+
+    .post {
+      width: 100%;
+      position: relative;
+      .post-content {
+        background: $white;
+        border-radius: 15px;
+        border: $white 1px solid;
+        width: 90%;
+        margin: auto;
+        color: $heavy-color;
+        margin-bottom: 25px;
+        padding: 0 15px;
+
+        h1 {
+          text-align: center;
+          width: 100%;
+        }
+        .author {
+          text-align: end;
+        }
+        .post-text {
+          text-align: center;
+        }
+        .delete-post {
+          padding: 5px;
+          right: 21px;
+          border: none;
+          top: 47%;
+          position: absolute;
+          opacity: 0;
+          background-color: $white;
+          color: $log-out;
+          transition: 0.3s ease-in;
+        }
+        .edit-post {
+          padding: 5px;
+          left: 20px;
+          border: none;
+          top: 47%;
+          position: absolute;
+          opacity: 0;
+          background-color: $white;
+          color: $success;
+          transition: 0.3s ease-in;
+        }
+      }
+    }
+    .post:hover {
+      .post-content {
+        .delete-post {
+          opacity: 1;
+        }
+        .edit-post {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  #warn-box {
+    width: 100%;
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #warn-place {
+      padding: 25px 5px;
+      border-radius: 25px;
+      text-align: center;
+      background: $white;
+      width: 50%;
+      margin-bottom: 50px;
+      i {
+        font-size: 50px;
+        color: $log-out;
+      }
+      a {
+        text-decoration: none;
+      }
+      #sign-btn {
+        font-weight: bold;
+        background-color: $sign-color;
+        border-radius: 5px;
+        color: $white;
+        padding: 3px;
+        transition: 0.2s ease-in;
+      }
+      #sign-btn:hover {
+        background-color: $light-sign-color;
+      }
+      #register-btn {
+        font-weight: bold;
+        border: none;
+        padding: 3px;
+        color: $font-color;
+        transition: 0.2s ease-in;
+      }
+      #register-btn:hover {
+        background-color: $success;
+        padding: 3px;
+        color: $white;
+        border-radius: 5px;
+      }
+    }
+  }
+  #move-up {
+    position: fixed;
+    right: 40px;
+    bottom: 0px;
+    font-size: 50px;
+    transition: 0.2s ease-in;
+
+    a {
+      color: $heavy-color;
+      transition: 0.2s ease-in;
+    }
+    a:hover {
+      color: $success;
+    }
+  }
+  #move-up:hover {
+    bottom: 10px;
+  }
+  .hide {
+    display: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+#my-posts-bg {
+  background-image: url("myposts.jpg") !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "BioRhyme", serif;
+}
+#add-post-bg {
+  background-image: url("addpost.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "BioRhyme", serif;
+
+  #log-out {
+    background-color: $white;
+    color: $heavy-color;
+    transition: 0.3s ease-in;
+  }
+
+  #log-out:hover {
+    color: $white;
+    background-color: $log-out;
+  }
+  #links-bar {
+    a:hover {
+      background-color: $white;
+      color: $heavy-color;
+    }
+    .active {
+      border: 2px solid $heavy-color;
+      background-color: $white;
+      color: $heavy-color;
+      transition: 0.3s ease-in;
+    }
+    .active:hover {
+      background-color: $success;
+      color: $heavy-color;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  #form-size {
+    margin: auto;
+    width: 70%;
+
+    height: 500px;
+    padding-top: 15px;
+    #form-add-post {
+      #form-params {
+        text-align: center;
+        h1 {
+          color: $white;
+        }
+        #title-input-place {
+          background-color: $transparent;
+          color: $white;
+          border: 1px solid $white;
+          width: 85%;
+          height: 35px;
+          font-weight: bold;
+          font-size: 25px;
+        }
+        #title-input-place:focus {
+          overflow: none;
+          border: 3px solid $white;
+        }
+        #info-input-place {
+          background-color: $transparent;
+          color: $white;
+          border: 1px solid $white;
+          width: 90%;
+          height: 380px;
+          line-height: 25px;
+          font-weight: bold;
+          font-size: 25px;
+          resize: none;
+          max-height: 380px;
+        }
+        #info-input-place:focus {
+          outline: none;
+          border: 3px solid $white;
+        }
+      }
+      #submit-post-btn {
+        width: 100%;
+        text-align: center;
+        #submit-post {
+          padding: 8px;
+          border: none;
+          background-color: $success;
+          margin-top: 5px;
+          transition: 0.3s ease-in;
+        }
+        #submit-post:hover {
+          border: 1px solid $white;
+          margin-top: 1px;
+          font-size: 15px;
+          padding: 12px;
+        }
+      }
+    }
+  }
+}

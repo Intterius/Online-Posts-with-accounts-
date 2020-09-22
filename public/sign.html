@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="forms-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <div id="links-bar">
+      <a href="sign.html" class="active">Sign In / Register</a>
+      <a href="allposts.html">Show all posts</a>
+      <a href="myposts.html">My posts</a>
+      <a href="addpost.html">Add a new post</a>
+    </div>
+    <div id='hidden-form' class="">
+      <div id="form-place">
+        <div id="form">
+          <h1>Sign In</h1>
+          <form id="submit-form">
+            <div id="sign-in">
+              <!-- <input type="text" id="country_code" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code" required>-->
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                pattern="\w{4,12}"
+                title="Username must contain between 4 and 12 elements"
+                required
+              />
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                pattern="\w{4,20}"
+                title="Password must contain between 4 and 20 elements"
+                required
+              />
+
+            </div>
+            <input id="login" value="Sign In" type="submit" />
+          </form>
+
+          <div id="register">
+            <p>Have not an account yet?</p>
+            <p>↓↓↓</p>
+            <a href="register.html">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id='success-message' class="">
+      <div id="already-logged">
+        <div id="already-text">
+          <div id="show-success">
+            <i class="far fa-check-circle"></i>
+            <h1>You have signed in successfully!</h1>
+            <p>Go and check our latest <a href="allposts.html">posts</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id='hidden-btn' class="">
+    <button id="log-out" class="">Log Out</button>
+    <a href="addpost.html" id="add-post" class="">+ Add Post</i></a>
+  </div>
+    <script src="sign.js"></script>
+  </body>
+</html>
