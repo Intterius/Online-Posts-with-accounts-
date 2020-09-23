@@ -9,18 +9,7 @@ form.addEventListener("click", (e) => {
     console.log(parent);
     deletePost(parent.id);
     form.removeChild(parent);
-    let text = parent.getElementsByClassName("post-text")[0].innerHTML;
-    let title = parent.firstElementChild.firstElementChild.innerHTML;
-    let author = parent.getElementsByClassName("author")[0].innerHTML;
-    //console.log(parent.firstElementChild.firstElementChild.innerHTML);
-    //console.log(parent.firstElementChild);
   }
-  /*if (child.classList.contains("edit-post")) {
-    window.open(
-      "addpost.html",
-      "_blank" // <- This is what makes it open in a new window.
-    );
-  }*/
 });
 logout.addEventListener("click", () => {
   localStorage.setItem("Authentication", "false");
@@ -52,33 +41,28 @@ async function getContent() {
     body: JSON.stringify(data),
   };
   let response = await fetch("/getdata", options);
-  let final = await response.json();
-  //let title = final[final.length - 1]["textcontent"][0]["title"];
-  // let text = final[final.length - 1]["textcontent"][0]["text"];
-  /*for (let i = 1; i < final.length + 1; i++) {
-    console.log(final[final.length - i]["user"] == user);
-  }*/
+  let finalResult = await response.json();
   let counter = [];
-  for (let i = 0; i < final.length; i++) {
-    counter.push(final[i]["time"]);
+  for (let i = 0; i < finalResult.length; i++) {
+    counter.push(finalResult[i]["time"]);
   }
   let postTime = counter.sort((a, b) => b - a);
   let index = 0;
   let timeIndex = 0;
   while (index < postTime.length) {
-    if (final[timeIndex]["time"] == postTime[index]) {
-      console.log(final[timeIndex]["user"]);
-      if (user == final[timeIndex]["user"]) {
-        form.innerHTML += `<div class='post' id="${final[timeIndex]["_id"]}"><div class="post-content">
-      <h1>${final[timeIndex]["title"]}</h1>
+    if (finalResult[timeIndex]["time"] == postTime[index]) {
+      console.log(finalResult[timeIndex]["user"]);
+      if (user == finalResult[timeIndex]["user"]) {
+        form.innerHTML += `<div class='post' id="${finalResult[timeIndex]["_id"]}"><div class="post-content">
+      <h1>${finalResult[timeIndex]["title"]}</h1>
       <hr />
       <br />
       <p class="post-text">
-      ${final[timeIndex]["text"]}
+      ${finalResult[timeIndex]["text"]}
       </p>
       <br />
       <hr />
-      <p class="author">${final[timeIndex]["user"]}'s Post</p>
+      <p class="author">${finalResult[timeIndex]["user"]}'s Post</p>
       <button class="delete-post" class="">
         <i class="far fa-trash-alt"></i>
       </button>
@@ -87,16 +71,16 @@ async function getContent() {
       </button>
     </div></div>`;
       } else {
-        form.innerHTML += `<div class='post' id="${final[timeIndex]["_id"]}"><div class="post-content">
-      <h1>${final[timeIndex]["title"]}</h1>
+        form.innerHTML += `<div class='post' id="${finalResult[timeIndex]["_id"]}"><div class="post-content">
+      <h1>${finalResult[timeIndex]["title"]}</h1>
       <hr />
       <br />
       <p class="post-text">
-      ${final[timeIndex]["text"]}
+      ${finalResult[timeIndex]["text"]}
       </p>
       <br />
       <hr />
-      <p class="author">${final[timeIndex]["user"]}'s Post</p>
+      <p class="author">${finalResult[timeIndex]["user"]}'s Post</p>
     </div></div>`;
       }
       timeIndex = 0;
@@ -105,43 +89,6 @@ async function getContent() {
       timeIndex++;
     }
   }
-  //const stampDate = new Date(item.timestamp).toLocaleString();
-  /* for (let i = 0; i < final.length; i++) {
-     if (user == final[i]["user"]) {
-      form.innerHTML += `<div class='post'><div class="post-content">
-    <h1>${final[i]["title"]}</h1>
-    <hr />
-    <br />
-    <p class="post-text">
-    ${final[i]["text"]}
-    </p>
-    <br />
-    <hr />
-    <p class="author">${final[i]["user"]}'s Post</p>
-    <button class="delete-post" class="">
-      <i class="far fa-trash-alt"></i>
-    </button>
-    <button class="edit-post" class="">
-      <i class="fas fa-pencil-alt"></i>
-    </button>
-  </div></div>`;
-    } else {
-      form.innerHTML += `<div class='post'><div class="post-content">
-    <h1>${final[i]["title"]}</h1>
-    <hr />
-    <br />
-    <p class="post-text">
-    ${final[i]["text"]}
-    </p>
-    <br />
-    <hr />
-    <p class="author">${final[i]["user"]}'s Post</p>
-  </div></div>`;
-    }
-  }
-*/
-  //console.log(final[final.length - 1]["user"] == user);
-  // console.log([final[final.length - 1]["user"], title, text]);
 }
 async function deletePost(id) {
   let data = { id };
@@ -151,5 +98,5 @@ async function deletePost(id) {
     body: JSON.stringify(data),
   };
   let response = await fetch("/deletedata", options);
-  let final = await response.json();
+  let finalResutl = await response.json();
 }

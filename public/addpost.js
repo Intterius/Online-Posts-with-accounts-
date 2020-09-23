@@ -6,13 +6,9 @@ const userTitlte = document.getElementById("title-input-place");
 const userContent = document.getElementById("info-input-place");
 submitForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  //console.log({ text: userContent.value, title: userTitlte.value });
   postContent(userTitlte.value, userContent.value);
-
   submitForm.reset();
   alert("Post Added");
-
-  // console.log(JSON.parse(localStorage.getItem("Authentication")) == true);
 });
 
 logout.addEventListener("click", () => {
@@ -40,7 +36,6 @@ async function postContent(title, text) {
       date.getMonth() + 1
     }${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`
   );
-
   let user = localStorage.getItem("User");
   let data = { title, text, user, time };
   let options = {
@@ -49,6 +44,5 @@ async function postContent(title, text) {
     body: JSON.stringify(data),
   };
   let response = await fetch("/postcontent", options);
-  let final = await response.json();
-  console.log(final);
+  let finalResult = await response.json();
 }

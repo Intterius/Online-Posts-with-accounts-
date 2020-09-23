@@ -1,4 +1,3 @@
-const { json } = require("express");
 const express = require("express");
 const app = express();
 const Datastore = require("nedb");
@@ -43,23 +42,6 @@ app.post("/data", (req, res) => {
     res.json(data);
   });
 });
-/*app.post("/postcontent", (req, res) => {
-  let info = req.body;
-  userName = info.user;
-  database.find({ user: userName }, (err, data) => {
-    // console.log(data[0]["textcontent"], data[0]["user"]);
-    console.log(data);
-    res.json(data);
-  });
-  database.update(
-    { user: userName },
-    { $push: { textcontent: { title: info.title, text: info.text } } },
-    {},
-    function () {
-      // Now the fruits array is ['apple', 'orange', 'pear', 'banana']
-    }
-  );
-});*/
 app.post("/postcontent", (req, res) => {
   postData.insert(req.body);
   res.json(req.body);
@@ -77,8 +59,6 @@ app.post("/deletedata", (req, res) => {
 
   postData.find({ _id: info.id }, (err, data) => {
     postData.remove({ _id: data[0]["_id"] }, {}, function (err, numRemoved) {});
-    //console.log(data[0]["_id"]);
-    //res.json(data);
   });
   res.json();
 });

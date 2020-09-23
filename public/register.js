@@ -41,6 +41,6 @@ async function getUser(user, pswd) {
     body: JSON.stringify(data),
   };
   let response = await fetch("/authentication", options);
-  let final = await response.json();
-  return final;
+  let finalResult = await response.json();
+  return finalResult;
 }

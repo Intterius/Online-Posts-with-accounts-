@@ -7,15 +7,15 @@ const username = document.getElementById("username");
 const pass = document.getElementById("password");
 formSubmit.addEventListener("submit", async (e) => {
   e.preventDefault();
-  // getUser(username.value, pass.value);
-  // getData(username.value, pass.value);
   let result = await getData(username.value, pass.value);
   if (result) {
     localStorage.setItem("Authentication", "true");
     localStorage.setItem("User", username.value);
     formSubmit.reset();
   } else {
-    alert("You introduced a wrong username or password, please try again.");
+    alert(
+      "You introduced a wrong username or password, please try again. Or such user hasn't been registered yet."
+    );
   }
 });
 logout.addEventListener("click", () => {
@@ -38,17 +38,6 @@ function checkAuthentication() {
 }
 setInterval(checkAuthentication, 100);
 
-/*async function getUser(user, pswd) {
-  let data = { user, pswd };
-  let options = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  };
-  let response = await fetch("/authentication", options);
-  let final = await response.json();
-}*/
-
 async function getData(user, pswd) {
   let data = { user, pswd };
   let options = {
@@ -58,9 +47,9 @@ async function getData(user, pswd) {
   };
 
   let response = await fetch("/data", options);
-  let final = await response.json();
+  let finalResult = await response.json();
 
-  if (final.length == 1) {
+  if (finalResult.length == 1) {
     return true;
   } else {
     return false;
